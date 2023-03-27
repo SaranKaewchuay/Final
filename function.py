@@ -19,7 +19,7 @@ def validate_input(workdays, total_ot_hours, num_late_days):
     if (type(workdays) != int or type(total_ot_hours) != int or type(num_late_days) != int):
           if type(workdays) == str or type(total_ot_hours) == str or type(num_late_days) == str:
             return "input integer"
-          elif workdays >= 1 and workdays <= 12 or total_ot_hours >= 1 and total_ot_hours <= 12 or num_late_days >= 1 and num_late_days <= 12:
+          elif workdays >= 0 and workdays <= 31 or total_ot_hours >= 0 and total_ot_hours <= 31 or num_late_days >= 0 and num_late_days <= 31:
             return "input integer"
           else:
             return "out of range must be between 0 and 31"
@@ -35,8 +35,10 @@ def validate_input(workdays, total_ot_hours, num_late_days):
     
 def salary_calculator(workdays,total_ot_hours,num_late_days):
     base_salary = 340 * workdays
-    ot_salary = min(total_ot_hours, 3) * 60
-    diligence_bonus = 0 if num_late_days > 0 else 1000
+    ot_salary = total_ot_hours * 60
+    diligence_bonus = 0 
+    if num_late_days == 0 and workdays > 0:
+        diligence_bonus = 1000
     total_salary = base_salary + ot_salary + diligence_bonus
     return total_salary
 
