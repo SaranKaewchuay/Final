@@ -1,20 +1,3 @@
-# def validate_input(workdays, total_ot_hours, num_late_days):
-#     try:
-#         workdays = int(workdays)
-#         total_ot_hours = int(total_ot_hours)
-#         num_late_days = int(num_late_days)
-#         if not 0 <= workdays <= 31 or not 0 <= num_late_days <= 31:
-#             return "Invalid input: number of workdays or number of late days must be between 0 and 31"    
-#         if num_late_days > workdays:
-#             return "Invalid input: number of late days. Not more than number of workdays"
-#         if not 0 <= total_ot_hours <= 3:
-#             return "Invalid input: total OT hours must be between 0 and 3"
-#     except ValueError:
-#         return "Invalid input: input positive integers"
-#     else:
-#         return True
-
-
 def validate_input(workdays, total_ot_hours, num_late_days):
     if (type(workdays) != int or type(total_ot_hours) != int or type(num_late_days) != int):
           if type(workdays) == str or type(total_ot_hours) == str or type(num_late_days) == str:
