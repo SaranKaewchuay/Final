@@ -4,7 +4,7 @@ import pytest
 # @pytest.mark.display
 @pytest.mark.parametrize("workdays, total_ot_hours, num_late_days,expected_result", 
 [
-     (30, 3, 5, 10380)
+     (30, 20, 5, 11400)
 ])
 
 def test_display(workdays, total_ot_hours, num_late_days,expected_result):
